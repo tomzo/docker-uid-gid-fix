@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 # These are usually known at the time when building the image
 DIRECTORY=$1
 OWNER_USERNAME=$2
@@ -48,4 +46,3 @@ groupmod -g $NEWGID $OWNER_GROUPNAME
 # When we know more about user and group then this find might be at smaller scope
 # find / -user $OWNER_USERNAME -exec chown -h $NEWUID {} \;
 # find / -group $OWNER_GROUPNAME -exec chgrp -h $NEWGID {} \;
-usermod -g $NEWGID $OWNER_USERNAME
