@@ -16,6 +16,6 @@ this when there are lots of files in `/srv/service` or we care about keeping num
 2. change uid and gid of `myservice` **user** on container start to match with mounted directory
 
 This repository demonstrates second option. It has its limitations:
- * cannot be used when host owner is root (uid=0,gid=0) and container owner is not root
+ * cannot be used when directory owner on host is root (uid=0,gid=0) and directory owner in container is not root
  * when docker image already contains files owned by `myservice` user then
  after changing uid and gid we have to search for all those files and update their ownership
